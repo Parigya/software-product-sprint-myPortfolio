@@ -1,18 +1,161 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
-  </body>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <title>Portfolio</title>
+    </head>
+    <body>
+        <!--header-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav_logo">Parigya Jain</a>
+                </div>
+                <div class="nav_menu" id="nav-menu">
+                    <ul class="nav_list">
+                        <li class="nav_item"><a href="#home" class="nav_link active">Home</a></li>
+                        <li class="nav_item"><a href="#about" class="nav_link">About</a></li>
+                        <li class="nav_item"><a href="#skills" class="nav_link">Skills</a></li>
+                        <li class="nav_item"><a href="#flip" class="nav_link">Flipside</a></li>
+                        <li class="nav_item"><a href="#contact" class="nav_link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav_toggle" id="nav-toggle">
+                    <i class="bx bx-menu"></i>
+                </div>
+            </nav>
+        </header>
+        <main class="l-main">
+            <!--HOME-->
+            <section class="home bd-grid" id="home">
+                <div class="home_data">
+                    <h1 class="home_title">Hi, <br> I am <span class="home_title-color">Parigya</span><br>SPSer</h1>
+                    <a href="#" class="button">Contact</a>
+                </div>
+                <div class="home_social">
+                    <a href="https://www.linkedin.com/in/parigya-jain-856346197/" class="home_social-icon"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/Parigya" class="home_social-icon"><i class="bx bxl-github"></i></a> 
+                    <a href="https://www.instagram.com/parigya_jain/?hl=en" class="home_social-icon"><i class='bx bxl-instagram'></i></a>
+                </div>
+                <div class="home_img">
+                    <img src="img/pic1.jpg" alt="">
+                </div>
+            </section>
+            <!--ABOUT-->
+            <section class="about section" id="about">
+                <h2 class="section-title">ABOUT</h2>
+                <div class="about_container bd-grid">
+                    <div class="about_img">
+                        <img src="img/pic2.jpg" alt="">
+                    </div>
+                    <div>
+                        <h2 class="about_subtitle">Hey there! I am Parigya</h2>
+                        <p class="about_text">I am an undergrad at Delhi Technological University (formerly known as DCE) graduating in 2022 with Bachelor in Technology in Mathematics and Computing.<br>I’ve always had a fascination for mathematics which is why I chose this branch.<br>Upon entering college I was introduced to computer science, and I developed a knack for problem solving in programming, combining the mathematical logic and its application in computer science. Beyond programming I have also tried my hand at Android Development, and it was exciting to work with technology and make things all on your own!<br><br>Beyond academics, I keep exploring and learning new things. Trying to gain knowledge of every field be it music, dance, sports, art. I am a learner, and try to remain true to the foundations of every skill. </p>
+                    </div>
+                </div>
+            </section>
+            <!--SKILLS-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">SKILLS</h2>
+                <div class="skills_container bd-grid">
+                    <div>
+                        <h2 class="skills_subtitle">Technical Skills</h2>
+                        <p class="skills_text">I am keenly interested in the software development side, I have worked with various softwares like android studio, visual studio code.  I am well versed with programming languages C, C++, Java, Kotlin.</p>
+                        
+                        <div class="skills_data">
+                            <div class="skills_names">
+                                <i class='bx bx-code-curly skills_icon'></i>
+                                <span class="skills_name">Programming</span>
+                            </div>
+                        </div>
+
+                        <div class="skills_data">
+                            <div class="skills_names">
+                                <i class='bx bxl-android skills_icon'></i>
+                                <span class="skills_name">Android Development</span>
+                            </div>
+                        </div>    
+
+                        <div class="skills_data">
+                            <div class="skills_names">
+                                <i class='bx bxl-html5 skills_icon'></i>
+                                <span class="skills_name">HTML5</span>
+                            </div>
+
+                        </div>
+
+                        <div class="skills_data">
+                            <div class="skills_names">
+                                <i class='bx bxl-css3 skills_icon'></i>
+                                <span class="skills_name">CSS3</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <img src="img/skills.jpg" alt="" class="skills_img">
+                    </div>
+                </div>
+            </section>
+            <!--FLIPSIDE-->
+            <section class="flip section" id="flip">
+                <h2 class="section-title">ON THE FLIPSIDE</h2>
+                <p style="color: gray;"><i>Apart from academics and technical skills you will always find me exploring something new, exciting and challenging.</i></p>
+                <br>
+                <div class="flip_container bd-grid">
+                    <div class="flip_img">
+                        <p class="heading"><b>Basketball</b></p>
+                        <img src="img/bb.jpg" alt=""><br>
+                        <p>I am a basketball team player. Played mostly during my school years and now also for the university basketball team. Learnt amazing teamwork and sportsman spirit from the game.</p>
+                    </div>
+
+                    <div class="flip_img">
+                        <p class="heading"><b>Dance</b></p>
+                        <img src="img/dance.jpg" alt=""><br>
+                        <p>I have always enjoyed dancing since i was little, in college I got the opportunity to grow and dive deeper into the hip hop culture. I have represented and won for the university in many competitions.</p>
+                    </div>
+
+                    <div class="flip_img">
+                        <p class="heading"><b>Sketching</b></p>
+                        <img src="img/sketch.jpg" alt=""><br>
+                        <p>In my free time, I like to sketch, be it some scenery or a simple human eye. Many times in deep thoughts, I subconsciously sketch in the margins of my notebook! </p>
+                    </div>
+
+                    <div class="flip_img">
+                        <p class="heading"><b>Chess</b></p>
+                        <img src="img/chess.jpg" alt=""><br>
+                        <p>It is always refreshing to play a game of chess when I feel exhausted. I am not very good at it, but I am always up for a game. My biggest weakness is converting a checkmate to a stalemate!</p>
+                    </div>
+
+                </div>
+            </section>
+            <!--CONTACT-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">CONTACT</h2>
+                <div class="contact_container bd-grid">
+                    <form action="" class="contact_form">
+                        <input type="text" placeholder="Name" class="contact_input">
+                        <input type="mail" placeholder="Email" class="contact_input">
+                        <textarea name="" id="" cols="0" rows="10" class="contact_input"></textarea>
+                        <input type="button" value="Enter" class="contact_button button">
+                    </form>
+                </div>
+            </section>
+        </main>
+        <!--footer-->
+        <footer class="footer">
+            <p class="footer_title">Parigya</p>
+            <div class="footer_social">
+                <a href="https://www.facebook.com/parigyaj/" class="footer_icon"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/parigya_jain/?hl=en" class="footer_icon"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/parigya-jain-856346197/" class="footer_icon"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <p>&#169; 2020 copyright all rights reserved</p>
+        </footer>
+        <!--scroll reveal-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <!--main js-->
+        <script src="script.js"></script>
+    </body>
 </html>
