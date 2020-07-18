@@ -5,7 +5,7 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <title>Portfolio</title>
     </head>
-    <body>
+    <body onload="fetchData()">
         <!--header-->
         <header class="l-header">
             <nav class="nav bd-grid">
@@ -145,13 +145,14 @@
                     </form>
                 </div>
             </section>
+            <!--COMMENTS-->
             <section class="comment section" id="comments">
                 <h2 class="section-title">Leave A Comment!</h2>
                 <div class="contact_container bd-grid">
-                    <form action="" class="contact_form">
-                        <input type="text" placeholder="Name" class="contact_input">
-                        <textarea name="" id="" cols="0" rows="6" class="contact_input"></textarea>
-                        <input type="button" value="Submit" class="contact_button button"> <br><br>
+                    <form action="/data" class="contact_form" method="POST">
+                        <input type="text" name="name" id="name" placeholder="Name" class="contact_input">
+                        <textarea name="comment-input" id="comment-input" cols="0" rows="6" class="contact_input"></textarea>
+                        <input type="Submit" value="Submit" class="contact_button button"> <br><br>
                     </form>
                     <button class="comments" onclick="fetchData()">See other Comments</button><br>
                     <ul id="comment-container"></ul>

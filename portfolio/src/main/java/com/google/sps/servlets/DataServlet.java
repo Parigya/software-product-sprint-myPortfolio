@@ -18,6 +18,7 @@ import java.io.IOException;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.sps.data.Comments;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,26 +28,29 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
     private List<String> comments;
-
-    @Override
-    public void init(){
-        comments = new ArrayList<>();
-        comments.add("Comment1");
-        comments.add("Comment2");
-        comments.add("Comment3");
-    }
+    
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String json = convertToJsonUsingGson(comments);
+    String json = new Gson().toJson(comments);
     System.out.println(json);
     response.setContentType("application/json;");
     response.getWriter().println(json);
   }
-  private String convertToJsonUsingGson(List<String> comments){
-      Gson gson = new Gson();
-      String json = gson.toJson(comments);
-      return json;
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+      String comment = getParameter(request, "comment-input", "");
+      String name = getParameter(request, "name", "");
+      response.setContentType("text/html");
+      response.getWriter().println(name);
+      response.getWriter().println(comment);
   }
+  private String getParameter(HttpServletRequest request, String name, String defaultValue){
+      String value = request.getParameter(name);
+      if(value == null) return defaultValue;
+      return value;
+  }
+  
 }
 
 
