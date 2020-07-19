@@ -21,6 +21,10 @@ import java.util.List;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
+import com.google.gson.Gson;
 import com.google.sps.data.Comments;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,23 +34,37 @@ import javax.servlet.http.HttpServletResponse;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-    private List<String> comments;
+    //private List<String> comments;
     
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String json = new Gson().toJson(comments);
-    System.out.println(json);
-    response.setContentType("application/json;");
-    response.getWriter().println(json);
+    Query query = new Query("Comments").addSort("timestamp", SortDirection.DESCENDING);  
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    PreparedQuery results = datastore.prepare(query);
+    
+    List<Comments> comments = new ArrayList<>();
+    for(Entity entity : results.asIterable()){
+        long id = entity.getKey().getId();
+        String name = (String) entity.getProperty("name");
+        String comment = (String) entity.getProperty("comment");
+        long timestamp = (long) entity.getProperty("timestamp");
+        Comments currComment = new Comments(id, name, comment, timestamp);
+        comments.add(currComment);
+    }
+    Gson gson = new Gson();
+    response.setContentType("application/json");
+    response.getWriter().println(gson.toJson(comments));
   }
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
       String comment = getParameter(request, "comment-input", "");
       String name = getParameter(request, "name", "");
+      long timestamp = System.currentTimeMillis();
       Entity commentEntity = new Entity("Comments");
       commentEntity.setProperty("name",name);
       commentEntity.setProperty("comment",comment);
+      commentEntity.setProperty("timestamp",timestamp);
       DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
       datastore.put(commentEntity);
       response.sendRedirect("/index.html");

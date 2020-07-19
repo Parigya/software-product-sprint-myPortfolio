@@ -5,7 +5,7 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <title>Portfolio</title>
     </head>
-    <body onload="fetchData()">
+    <body>
         <!--header-->
         <header class="l-header">
             <nav class="nav bd-grid">
@@ -18,7 +18,7 @@
                         <li class="nav_item"><a href="#about" class="nav_link">About</a></li>
                         <li class="nav_item"><a href="#skills" class="nav_link">Skills</a></li>
                         <li class="nav_item"><a href="#flip" class="nav_link">Flipside</a></li>
-                        <li class="nav_item"><a href="#contact" class="nav_link">Contact</a></li>
+                        <li class="nav_item"><a href="#comments" class="nav_link">Comments</a></li>
                     </ul>
                 </div>
                 <div class="nav_toggle" id="nav-toggle">
@@ -133,7 +133,7 @@
 
                 </div>
             </section>
-            <!--CONTACT-->
+            <!--CONTACT
             <section class="contact section" id="contact">
                 <h2 class="section-title">CONTACT</h2>
                 <div class="contact_container bd-grid">
@@ -144,18 +144,18 @@
                         <input type="button" value="Enter" class="contact_button button">
                     </form>
                 </div>
-            </section>
+            </section>-->
             <!--COMMENTS-->
             <section class="comment section" id="comments">
                 <h2 class="section-title">Leave A Comment!</h2>
-                <div class="contact_container bd-grid">
-                    <form action="/data" class="contact_form" method="POST">
-                        <input type="text" name="name" id="name" placeholder="Name" class="contact_input">
-                        <textarea name="comment-input" id="comment-input" cols="0" rows="6" class="contact_input"></textarea>
-                        <input type="Submit" value="Submit" class="contact_button button"> <br><br>
+                <div class="comment_container bd-grid">
+                    <form action="/data" class="comment_form" method="POST">
+                        <input type="text" name="name" id="name" placeholder="Name" class="comment_input">
+                        <textarea name="comment-input" id="comment-input" cols="0" rows="6" class="comment_input"></textarea>
+                        <input type="Submit" value="Submit" class="comment_button button"> <br><br>
                     </form>
-                    <button class="comments" onclick="fetchData()">See other Comments</button><br>
-                    <ul id="comment-container"></ul>
+                        <button class="comments" onclick="fetchData()">See other Comments</button><br>
+                        <ul class="comment-container" id="comment-container"></ul>
                 </div>
             </section>
             

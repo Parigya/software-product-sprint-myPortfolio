@@ -299,7 +299,7 @@ img{
     transform: scale(1.1);
 }
 /*CONTACT*/
-.contact_input{
+.comment_input{
     width: 100%;
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi);
@@ -309,7 +309,7 @@ img{
     outline: none;
     margin-bottom: var(--mb-4);
 }
-.contact_button{
+.comment_button{
     display: block;
     border: none;
     outline: none;
@@ -416,10 +416,10 @@ img{
         grid-template-columns: repeat(4,1fr);
         column-gap: 2rem;
     }
-    .contact_form{
+    .comment_form{
         width: 360px;
     }
-    .contact_container{
+    .comment_container{
         justify-items: center;
     }
 }

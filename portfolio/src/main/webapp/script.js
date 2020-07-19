@@ -20,12 +20,14 @@ function fetchData(){
     fetch('/data').then(response => response.json()).then((comments)=>{
         const commentListElement = document.getElementById('comment-container');
         commentListElement.innerHTML = '';
-        commentListElement.appendChild(
-            createListElement('Comment ' + comments[0]));
-        commentListElement.appendChild(
-            createListElement('Comment ' + comments[1]));
-        commentListElement.appendChild(
-            createListElement('Comment ' + comments[2]));
+        for(var i=0; i<comments.length; i++){
+            commentListElement.appendChild(
+                createListElement(i+1 +'->'));  
+            commentListElement.appendChild(
+                createListElement('Name : ' + comments[i].name));
+            commentListElement.appendChild(
+                createListElement('Comment : ' + comments[i].comment));      
+        }
 
     });
 }
@@ -81,4 +83,4 @@ sr.reveal('.skills_img',{display: 400})
 //Scroll flipside
 sr.reveal('.flip_img',{interval: 200})
 //Scroll contact
-sr.reveal('.contact_input',{interval: 200})
+sr.reveal('.comment_input',{interval: 200})
