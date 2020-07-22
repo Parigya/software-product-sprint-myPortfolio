@@ -4,21 +4,24 @@
         <link rel="stylesheet" href="style.css">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <title>Portfolio</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body>
+    <body onload="checkStatus()">
         <!--header-->
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-                    <a href="#" class="nav_logo">Parigya Jain</a>
+                    <a href="#home" class="nav_logo">Parigya Jain</a>
                 </div>
                 <div class="nav_menu" id="nav-menu">
                     <ul class="nav_list">
+                        <li class="nav_item" id="login"><a href="/login" class="nav_link">Login</a></li>
+                        <li class="nav_item" id="logout"><a href="/login" class="nav_link">Logout</a></li>
                         <li class="nav_item"><a href="#home" class="nav_link active">Home</a></li>
                         <li class="nav_item"><a href="#about" class="nav_link">About</a></li>
                         <li class="nav_item"><a href="#skills" class="nav_link">Skills</a></li>
                         <li class="nav_item"><a href="#flip" class="nav_link">Flipside</a></li>
-                        <li class="nav_item"><a href="#comments" class="nav_link">Comments</a></li>
+                        <li class="nav_item" id="comment-section"><a href="#comments" class="nav_link">Comments</a></li>
                     </ul>
                 </div>
                 <div class="nav_toggle" id="nav-toggle">
@@ -54,7 +57,7 @@
                     </div>
                     <div>
                         <h2 class="about_subtitle">Hey there! I am Parigya</h2>
-                        <p class="about_text">I am an undergrad at Delhi Technological University (formerly known as DCE) graduating in 2022 with Bachelor in Technology in Mathematics and Computing.<br> I have always had a fascination for mathematics which is why I chose this branch.<br>Upon entering college I was introduced to computer science, and I developed a knack for problem solving in programming, combining the mathematical logic and its application in computer science. Beyond programming I have also tried my hand at Android Development, and it was exciting to work with technology and make things all on your own!<br><br>Beyond academics, I keep exploring and learning new things. Trying to gain knowledge of every field be it music, dance, sports, art. I am a learner, and try to remain true to the foundations of every skill. </p>
+                        <p class="about_text">I am an undergrad at Delhi Technological University (formerly known as DCE) graduating in 2022 with Bachelor in Technology in Mathematics and Computing. I am an alumnus of Delhi Public School, Dwarka.<br> I have always had a fascination for mathematics which is why I chose this branch.<br>Upon entering college I was introduced to computer science, and I developed a knack for problem solving in programming, combining the mathematical logic and its application in computer science. Beyond programming I have also tried my hand at Android Development, and it was exciting to work with technology and make things all on your own!<br><br>Beyond academics, I keep exploring and learning new things. Trying to gain knowledge of every field be it music, dance, sports, art. I am a learner, and try to remain true to the foundations of every skill. </p>
                     </div>
                 </div>
             </section>

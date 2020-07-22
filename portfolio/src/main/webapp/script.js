@@ -31,6 +31,19 @@ function fetchData(){
 
     });
 }
+function checkStatus(){
+    fetch('/login').then(response => response.text()).then((login) => {
+        console.log("status is " + login)
+        if(login.substr(3,5)=="Login"){
+            $('#comments').hide();
+            $('#comment-section').hide();
+            $('#logout').hide();
+        }
+        else{
+            $('#login').hide();
+        }
+    });
+}
 function createListElement(text){
     const liElement = document.createElement('li');
     liElement.innerText = text;
